@@ -11,7 +11,7 @@ def run_large_gpu_blackjack(total_games=70_000_000, batch_size=1_000_000, seed=4
     total = GPUStats(0, 0, 0, 0.0)
     num_batches = total_games // batch_size
 
-    print(f"\n🎮 Starting GPU Blackjack simulation")
+    print(f"\n Starting GPU Blackjack simulation")
     print(f"Total games: {total_games:,} | Batch size: {batch_size:,} | Batches: {num_batches}")
     print("=" * 75)
 
@@ -33,7 +33,7 @@ def run_large_gpu_blackjack(total_games=70_000_000, batch_size=1_000_000, seed=4
         )
 
         batch_time = time.time() - batch_start
-        throughput = batch_size / batch_time
+        throughput = batch_size / batch_time  ## Throughput = how many games per second your GPU is processing.
         print(f"✅ Batch {batch_num}/{num_batches} | Time: {batch_time:.2f}s | "
               f"Throughput: {throughput:,.0f} games/sec")
 
